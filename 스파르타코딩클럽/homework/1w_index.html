@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 1주차 HW </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .wrap {
+            /*background-color: mediumseagreen;*/
+            width: 450px;
+            margin: auto;
+        }
+
+        .item_img {
+            width: 450px;
+            height: 400px;
+            background-image: url("http://choicebox.co.kr/web/product/big/201910/48bd62fc7f694dcc0afc890a8db08bc6.jpg");
+            background-position: center;
+            background-size: cover;
+            margin: 10px auto 20px auto;
+        }
+
+        .price {
+            font-size: 18px;
+        }
+
+        .item_desc {
+            margin-bottom: 20px;
+        }
+
+        .order_btn{
+            margin : auto;   /*글속성이 아닌 block속성에만 해당*/
+            width : 100px;
+            display: block;  /* 가운데로 오지 않으면 디스플레이 속성값을 block으로 바꾼다.*/
+        }
+    </style>
+
+    <script>
+        function order(){
+            alert('주문이 완료되었습니다!');
+        }
+    </script>
+</head>
+
+<body>
+    <div class=wrap>
+        <div class="item_img"></div>
+        <div class="item_desc">
+            <h3>초대형 오구 바디필로우 <span class="price">가격:59,000W/개</span></h3>
+            <p>커다란 오구의 등장! 부드럽고 푹신한 오구를 끌어안고 자면 잠이 솔솔~ 올 거예요. 수면 부족인 사람 여기로 모이세요~</p>
+        </div>
+        <div class="item_order">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">주문자 이름</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">수량</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>-- 수량을 선택하세요 --</option>
+                    <option value="1">1개</option>
+                    <option value="2">2개</option>
+                    <option value="3">3개</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">주소</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">전화번호</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary order_btn" onclick="order()">주문하기</button>
+    </div>
+
+</body>
+
+</html>
