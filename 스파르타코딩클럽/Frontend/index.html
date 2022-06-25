@@ -47,6 +47,8 @@
             border: 3px solid black;
             border-radius : 10px;
             padding: 35px;
+
+            display: none;
         }
     </style>
 
@@ -67,8 +69,10 @@
             console.log(status);
             if(status == `block`) {
                 $('#post-box').hide();
+                $('#btn-posting-box').text('포스팅박스 열기');
             } else {
                 $('#post-box').show();
+                $('#btn-posting-box').text('포스팅박스 닫기');
             }
         }
     </script>
