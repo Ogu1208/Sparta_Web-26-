@@ -66,11 +66,34 @@
             width: 100px;
             display: block; /* 가운데로 오지 않으면 디스플레이 속성값을 block으로 바꾼다.*/
         }
+
+        #rate {
+            color: blue;
+        }
     </style>
 
     <script>
+        $(document).ready(function () {
+            f1();
+        });
+
         function order() {
             alert('주문이 완료되었습니다!');
+        }
+
+        function f1() {
+            $('#names-q1').empty()
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/rate",
+                data: {},
+                success: function (response) {
+                    console.log(response)
+                    let rate = response['rate']
+                     $('#exchange_rate').text(rate);
+                }
+
+            })
         }
     </script>
 </head>
@@ -106,6 +129,7 @@
     <div class="item_desc">
         <h3>오구 크라운 초대형필로우 <span class="price">가격:58,000W/개</span></h3>
         <p>커다란 오구의 등장! 부드럽고 푹신한 오구를 끌어안고 자면 잠이 솔솔~ 올 거예요. 수면 부족인 사람 여기로 모이세요~</p>
+        <p id="rate">달러-원 환율 : <span id="exchange_rate">1219.15</span></p>
     </div>
     <div class="item_order">
         <div class="input-group mb-3">

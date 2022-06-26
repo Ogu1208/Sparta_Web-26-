@@ -31,12 +31,13 @@
     <script>
         function q1() {
             // 여기에 코드를 입력하세요
+            $('#names-q1').empty()
             $.ajax({
                 type: "GET",
                 url: "http://spartacodingclub.shop/sparta_api/seoulbike",
                 data: {},
                 success: function (response) {
-                    $('#names-q1').empty()
+                    // console.log(response)
 
                     let rows = response['getStationList']['row']
                     for (let i = 0; i < rows.length; i++) {
