@@ -53,16 +53,41 @@
     </style>
 
     <script>
-        // let count = 1;
-        // function hey(){
-        //     if (count % 2 == 0) {
-        //         alert('짝수입니다!')
-        //     } else {
-        //         alert('홀수입니다!')
-        //     }
-        //     count += 1;
-        //     // count 사라짐
-        // }
+        $(document).ready(function () {
+            $('#cards-box').empty()
+            listing();
+        });
+
+        function listing() {
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/post",
+                data: {},
+                success: function (response) {
+                    console.log(response)
+                    let rows = response['articles']
+                    for(let i = 0; i < rows.length; i++) {
+                        let comment = rows[i]['comment']
+                        let desc = rows[i]['desc']
+                        let image = rows[i]['image']
+                        let title = rows[i]['title']
+                        let url = rows[i]['url']
+
+                        let temp_html = `<div class="card">
+                                            <img class="card-img-top"
+                                                 src="${image}"
+                                                 alt="Card image cap">
+                                            <div class="card-body">
+                                                <a class="card-title" href="${url}"> ${title} </a>
+                                                <p class="card-text">${desc}</p>
+                                                <p class="comment">${comment}</p>
+                                            </div>
+                                        </div>`
+                        $('#cards-box').append(temp_html)
+                    }
+                }
+            })
+        }
 
         function openclose() {
             let status = $('#post-box').css('display');
