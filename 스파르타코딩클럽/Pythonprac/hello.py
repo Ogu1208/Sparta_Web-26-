@@ -17,13 +17,20 @@ soup = BeautifulSoup(data.text, 'html.parser')
 #select는 결과가 list로 나온다
 trs = soup.select('#old_content > table > tbody > tr')
 
-#old_content > table > tbody > tr:nth-child(2) > td.title > div > a  // 그린북 copy
-
+#old_content > table > tbody > tr:nth-child(2) > td.title > div > a  // 그린북 영화 이름 copy
+#old_content > table > tbody > tr:nth-child(2) > td.point  # 그린북 영화 평점 copy
 for tr in trs:
+
     a_tag = tr.select_one('td.title > div > a')
+    # rank = tr.select_one('td:nth-child(1) > img')['alt']
+    # print(rank)
+
     if a_tag is not None:
+        rank = tr.select_one('td:nth-child(1) > img')['alt']
         title = a_tag.text
-        print(title)
+        star = tr.select_one('td.point').text
+        print(rank, title, star)
+
 
 
 title = soup.select_one('#old_content > table > tbody > tr:nth-child(2) > td.title > div > a')
