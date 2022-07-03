@@ -16,4 +16,4 @@ for movie in same_star:
 
 
 # (3) 매트릭스 영화의 평점을 0으로 만들기
-db.movies.update_one({'title':'매트릭스'},{'$set':{'star':0}})
+db.movies.update_one({'title':'매트릭스'},{'$set':{'star':'0'}})
