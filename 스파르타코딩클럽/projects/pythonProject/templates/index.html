@@ -25,22 +25,15 @@
 
         <script type="text/javascript">
 
-        <!-- 로딩 되자마자-->
             $(document).ready(function () {
                 showReview();
             });
 
-
             function makeReview() {
-
-                let title = $('#title').val()
-                let author = $('#author').val()
-                let review = $('#bookReview').val()
-
                 $.ajax({
                     type: "POST",
                     url: "/review",
-                    data: {title_give:title, author_give:author, review_give: review},
+                    data: {sample_give:'샘플데이터'},
                     success: function (response) {
                         alert(response["msg"]);
                         window.location.reload();
@@ -51,23 +44,10 @@
             function showReview() {
                 $.ajax({
                     type: "GET",
-                    url: "/review",
+                    url: "/review?sample_give=샘플데이터",
                     data: {},
                     success: function (response) {
-                        let reviews = response['all_reviews']
-                        for(let i = 0; i < reviews.length; i++) {
-                            let title = reviews[i]['title']
-                            let author = reviews[i]['author']
-                            let review = reviews[i]['review']
-
-                            let temp_html = `<tr>
-                                                 <td>${title}</td>
-                                                 <td>${author}</td>
-                                                 <td>${review}</td>
-                                             </tr>`
-                            $('#reviews-box').append(temp_html);
-                            console.log(title, author, review)
-                        }
+                        alert(response["msg"]);
                     }
                 })
             }
@@ -139,7 +119,11 @@
                     </tr>
                     </thead>
                     <tbody id="reviews-box">
-
+                    <tr>
+                        <td>왕초보 8주 코딩</td>
+                        <td>김르탄</td>
+                        <td>역시 왕초보 코딩교육의 명가답군요. 따라하다보니 눈 깜짝할 사이에 8주가 지났습니다.</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
