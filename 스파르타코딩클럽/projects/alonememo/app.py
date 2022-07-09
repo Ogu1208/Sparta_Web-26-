@@ -15,9 +15,9 @@ def home():
 
 @app.route('/memo', methods=['GET'])
 def listing():
-    sample_receive = request.args.get('sample_give')
-    print(sample_receive)
-    return jsonify({'msg':'GET 연결되었습니다!'})
+    # 여러개 찾기 - 예시 ( _id 값은 제외하고 출력)
+    articles = list(db.articles.find({}, {'_id': False}))
+    return jsonify({'all_articles': articles})
 
 ## API 역할을 하는 부분
 @app.route('/memo', methods=['POST'])
