@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 10센치(10cm) 팬명록</title>
+    <style>
+        .mytitle {
+            width: 100%;
+            height: 300px;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.topstarnews.net/news/photo/201807/456143_108614_510.jpg");
+            background-size: cover;
+            background-position: center 25%;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mypost {
+            max-width: 500px;
+            width: 95%;
+
+            margin: 20px auto 0 auto;
+
+            box-shadow: 0px 0px 3px 0px gray;
+
+            padding: 20px;
+        }
+
+        .cards {
+            max-width: 540px;
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="mytitle">
+    <h1>10cm 팬명록</h1>
+</div>
+</body>
+    <div class="mypost">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">영화URL</label>
+        </div>
+        <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                          style="height: 100px"></textarea>
+            <label for="floatingTextarea2">코멘트</label>
+        </div>
+
+        <div class="mybtn">
+            <button type="button" class="btn btn-dark">기록하기</button>
+            <button type="button" class="btn btn-outline-dark">닫기</button>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+</html>
